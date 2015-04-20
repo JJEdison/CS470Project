@@ -11,6 +11,7 @@
 @interface HuntTableViewController ()
 
 @property (nonatomic) HuntDataSource *huntDataSource;
+@property (nonatomic) StepDataSource *stepsDataSource;
 @property (nonatomic) UIActivityIndicatorView *activityIndicator;
 @property (nonatomic) NSString *hunts;
 
@@ -39,8 +40,6 @@ static NSString *tableCellViewID = @"Cell";
     
     NSString *huntURLString = @"http://cs.sonoma.edu/~ppfeffer/470/pullData.py?rType=allHunts";
     
-
-    
     self.huntDataSource = [[HuntDataSource alloc] initWithHuntsURLString:huntURLString];
     [self.huntDataSource setDelegate:self];
 
@@ -56,9 +55,6 @@ static NSString *tableCellViewID = @"Cell";
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
 
     self.title = @"Hunts";
-    
-    
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -128,7 +124,7 @@ static NSString *tableCellViewID = @"Cell";
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Return NO if you do not want the specified item to be editable.
-    return YES;
+    return NO;
 }
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -157,6 +153,12 @@ static NSString *tableCellViewID = @"Cell";
     svc.huntName = [hunt title];
     [self.navigationController pushViewController:svc animated:YES];
     
+    
+    NSString *stepsURLString = [NSString stringWithFormat:@"cs.sonoma.edu/~ppfeffer/470/pullData.py?rType=stepsInHunt&rHunt=%@", [hunt title]];
+    self.stepsDataSource = [[StepDataSource alloc] initWithStepsURL:stepsURLString];
+    [self.stepsDataSource setDelegate:self];
+    
+
     
 }
 

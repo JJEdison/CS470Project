@@ -87,6 +87,11 @@ enum {VIEW_HEIGHT = 90};
     }
 }
 
+- (void) getSteps
+{
+    
+}
+
 
 
 @end

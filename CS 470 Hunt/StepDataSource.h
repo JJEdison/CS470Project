@@ -18,6 +18,8 @@
 @property (nonatomic) id<DataSourceReadyForUseDelegate> delegate;
 @property (nonatomic) BOOL dataReadyForUse;
 
+- (instancetype) initWithStepsURL: (NSString *) sURL;
+
 
 @end
 

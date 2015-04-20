@@ -8,7 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "HuntDataSource.h"
 
 @interface HuntDetailViewController : UIViewController
+
+@property (nonatomic) HuntDataSource *huntDataSource;
 
 @end

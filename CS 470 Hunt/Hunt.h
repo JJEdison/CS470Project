@@ -8,12 +8,16 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "HuntDataSource.h"
 
 @interface Hunt : NSObject
 
 @property (nonatomic) NSMutableDictionary *huntAttributes;
+@property (nonatomic) NSMutableArray *steps;
 
--(id) initWithDictionary: (NSDictionary *) dictionary;
+- (void) getSteps;
+
+- (id) initWithDictionary: (NSDictionary *) dictionary;
 - (void) addValue: (NSString *) attrVal forAttribute: (NSString *) attrName;
 - (NSString *) getValueForAttribute: (NSString *) attr;
 - (NSString *) title;

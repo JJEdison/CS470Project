@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "HuntDataSource.h"
+#import "StepDataSource.h"
 #import "Hunt.h"
 #import "HuntDetailViewController.h"
 #import "StepViewController.h"

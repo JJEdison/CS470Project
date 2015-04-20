@@ -63,9 +63,9 @@
         return;
     }
     
-    for( NSMutableDictionary *theaterTuple in jsonString )
+    for( NSMutableDictionary *huntTuple in jsonString )
     {
-        Hunt *hunt = [[Hunt alloc] initWithDictionary:theaterTuple];
+        Hunt *hunt = [[Hunt alloc] initWithDictionary:huntTuple];
         if( _debug )
             [hunt print];
         [self.allHunts addObject:hunt];
